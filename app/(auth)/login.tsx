@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Stack } from 'expo-router';
 import { Alert, StyleSheet, View, AppState, TextInput, Button } from 'react-native';
 
 import { supabase } from '../../utils/supabase';
