@@ -24,6 +24,11 @@ export default function AuthProvider({ children }: AuthProviderProps) {
       setSession(session);
     });
   }, []);
+
+  if (!isReady) {
+    return <ActivityIndicator />;
+  }
+
   return (
     <AuthContext.Provider
       value={{ session, user: session?.user, isAuthenticated: !!session?.user }}>
@@ -31,3 +36,5 @@ export default function AuthProvider({ children }: AuthProviderProps) {
     </AuthContext.Provider>
   );
 }
+
+export const useAuth = () => useContext(AuthContext);
