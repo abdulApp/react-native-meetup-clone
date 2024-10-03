@@ -8,7 +8,6 @@ import { useAuth } from '~/contexts/AuthProvider';
 export default function TabLayout() {
   // @ts-ignore
   const { isAuthenticated } = useAuth();
-  console.warn(isAuthenticated);
 
   if (!isAuthenticated) {
     return <Redirect href="/login" />;
