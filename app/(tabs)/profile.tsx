@@ -114,7 +114,7 @@ export default function Profile() {
       <Pressable
         onPress={() => updateProfile({ username, website, avatar_url: avatarUrl })}
         disabled={loading}
-        className="flex-1 items-center rounded-md border-2 border-red-500 p-3 px-8">
+        className="items-center rounded-md border-2 border-red-500 p-3 px-8">
         <Text className="text-lg font-bold text-red-500">Sign in</Text>
       </Pressable>
 
