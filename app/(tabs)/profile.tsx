@@ -13,6 +13,8 @@ export default function Profile() {
   const [username, setUsername] = useState('');
   const [website, setWebsite] = useState('');
   const [avatarUrl, setAvatarUrl] = useState('');
+  const [fullName, setFullName] = useState('');
+
 
   // @ts-ignore
   const { session } = useAuth();
@@ -28,7 +30,7 @@ export default function Profile() {
 
       const { data, error, status } = await supabase
         .from('profiles')
-        .select(`username, website, avatar_url`)
+        .select(`username, website, avatar_url, full_name`)
         .eq('id', session?.user.id)
         .single();
       if (error && status !== 406) {
@@ -39,6 +41,7 @@ export default function Profile() {
         setUsername(data.username);
         setWebsite(data.website);
         setAvatarUrl(data.avatar_url);
+        setFullName(data.full_name);
       }
     } catch (error) {
       if (error instanceof Error) {
@@ -119,35 +122,34 @@ export default function Profile() {
         <Text className="text-lg font-bold text-red-500">
           {loading ? 'Loading ...' : 'Update'}
         </Text>
-        {/*title={loading ? 'Loading ...' : 'Update'}*/}
       </Pressable>
 
-      <View style={styles.container}>
-        <View style={[styles.verticallySpaced, styles.mt20]}>
-          <TextInput
-            value={session?.user?.email}
-            // disabled
-          />
-        </View>
-        <View style={styles.verticallySpaced}>
-          <TextInput value={username || ''} onChangeText={(text) => setUsername(text)} />
-        </View>
-        <View style={styles.verticallySpaced}>
-          <TextInput value={website || ''} onChangeText={(text) => setWebsite(text)} />
-        </View>
+      {/*<View style={styles.container}>*/}
+      {/*  <View style={[styles.verticallySpaced, styles.mt20]}>*/}
+      {/*    <TextInput*/}
+      {/*      value={session?.user?.email}*/}
+      {/*      // disabled*/}
+      {/*    />*/}
+      {/*  </View>*/}
+      {/*  <View style={styles.verticallySpaced}>*/}
+      {/*    <TextInput value={username || ''} onChangeText={(text) => setUsername(text)} />*/}
+      {/*  </View>*/}
+      {/*  <View style={styles.verticallySpaced}>*/}
+      {/*    <TextInput value={website || ''} onChangeText={(text) => setWebsite(text)} />*/}
+      {/*  </View>*/}
 
-        <View style={[styles.verticallySpaced, styles.mt20]}>
-          <Button
-            title={loading ? 'Loading ...' : 'Update'}
-            onPress={() => updateProfile({ username, website, avatar_url: avatarUrl })}
-            disabled={loading}
-          />
-        </View>
+      {/*  <View style={[styles.verticallySpaced, styles.mt20]}>*/}
+      {/*    <Button*/}
+      {/*      title={loading ? 'Loading ...' : 'Update'}*/}
+      {/*      onPress={() => updateProfile({ username, website, avatar_url: avatarUrl })}*/}
+      {/*      disabled={loading}*/}
+      {/*    />*/}
+      {/*  </View>*/}
 
-        <View style={styles.verticallySpaced}>
-          <Button title="Sign Out" onPress={() => supabase.auth.signOut()} />
-        </View>
-      </View>
+      {/*  <View style={styles.verticallySpaced}>*/}
+      {/*    <Button title="Sign Out" onPress={() => supabase.auth.signOut()} />*/}
+      {/*  </View>*/}
+      {/*</View>*/}
 
       <Button title="Sign out" onPress={() => supabase.auth.signOut()} />
     </View>
