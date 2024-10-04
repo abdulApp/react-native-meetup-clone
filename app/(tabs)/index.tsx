@@ -1,21 +1,21 @@
 import Feather from '@expo/vector-icons/Feather';
 import { black } from 'colorette';
 import { Stack } from 'expo-router';
-import { View, Text, Image, FlatList } from 'react-native';
+import { FlatList } from 'react-native';
 
-import events from '~/assets/events.json';
 import EventListItem from '~/components/EventListItem';
 import { supabase } from '~/utils/supabase';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [events, setEvents] = useState([]);
   useEffect(() => {
     fetchEvents();
   }, []);
   const fetchEvents = async () => {
-    const { data: events, error } = await supabase.from('events').select('*');
-    console.warn(events);
-    console.log(error)
+    const { data, error } = await supabase.from('events').select('*');
+    // @ts-ignore
+    setEvents(data);
   };
   return (
     <>
