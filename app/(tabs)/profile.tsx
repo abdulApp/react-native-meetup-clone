@@ -15,7 +15,6 @@ export default function Profile() {
   const [avatarUrl, setAvatarUrl] = useState('');
   const [fullName, setFullName] = useState('');
 
-
   // @ts-ignore
   const { session } = useAuth();
 
@@ -56,6 +55,7 @@ export default function Profile() {
     username,
     website,
     avatar_url,
+    full_name,
   }: {
     username: string;
     website: string;
@@ -70,6 +70,7 @@ export default function Profile() {
         username,
         website,
         avatar_url,
+        full_name,
         updated_at: new Date(),
       };
 
@@ -99,6 +100,14 @@ export default function Profile() {
       />
 
       <TextInput
+        onChangeText={(text) => setFullName(text)}
+        value={fullName}
+        placeholder="full name"
+        autoCapitalize="none"
+        className="rounded-md border border-gray-200 p-3"
+      />
+
+      <TextInput
         onChangeText={(text) => setUsername(text)}
         value={username}
         placeholder="username"
@@ -115,13 +124,11 @@ export default function Profile() {
       />
 
       <Pressable
-        onPress={() => updateProfile({ username, website, avatar_url: avatarUrl })}
+        onPress={() => updateProfile({ username, website, avatar_url: avatarUrl,
+          full_name: fullName })}
         disabled={loading}
-        className="items-center rounded-md border-2 border-red-500 p-3 px-8"
-      >
-        <Text className="text-lg font-bold text-red-500">
-          {loading ? 'Loading ...' : 'Update'}
-        </Text>
+        className="items-center rounded-md border-2 border-red-500 p-3 px-8">
+        <Text className="text-lg font-bold text-red-500">{loading ? 'Loading ...' : 'Update'}</Text>
       </Pressable>
 
       {/*<View style={styles.container}>*/}
