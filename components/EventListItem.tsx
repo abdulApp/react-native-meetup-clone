@@ -2,11 +2,15 @@ import Feather from '@expo/vector-icons/Feather';
 import dayjs from 'dayjs';
 import { Link } from 'expo-router';
 import { View, Text, Image, Pressable } from 'react-native';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // @ts-ignore
 export default function EventListItem({ event }) {
   const [numberOfAttendees, setNumberOfAttendees] = useState(0);
+
+  useEffect(() => {
+    fetchNumberOfAttendees();
+  }, [event.id]);
 
   const fetchNumberOfAttendees = async () => {
 
