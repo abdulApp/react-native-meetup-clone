@@ -27,7 +27,7 @@ export default function EventAttendance() {
       <FlatList
         data={attendees}
         renderItem={({ item }) => (
-          <View className=''>
+          <View className='p-3'>
             <Text>{item.profiles.full_name || 'User'}</Text>
           </View>
         )}
