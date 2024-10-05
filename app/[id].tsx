@@ -90,7 +90,7 @@ export default function EventPage() {
         <Text className="text-xl font-semibold">Free</Text>
 
         {attendace ? (
-          <Text className='font-bold'>You are attending</Text>
+          <Text className='font-bold text-green-500'>You are attending</Text>
         ) : (
           <Pressable onPress={() => joinEvent()} className="rounded-md bg-red-400 p-5 px-8">
             <Text className="text-lg font-bold text-white">Join and RSVP</Text>
