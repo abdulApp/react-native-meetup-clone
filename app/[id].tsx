@@ -41,6 +41,8 @@ export default function EventPage() {
       .insert({ user_id: user.id, event_id: event.id })
       .select()
       .single();
+
+    setAttendace(data)
   };
 
   if (loading) {
