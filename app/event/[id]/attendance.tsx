@@ -1,6 +1,6 @@
 import { useLocalSearchParams } from 'expo-router';
 import React, { useEffect, useState } from 'react';
-import { Text } from 'react-native';
+import { FlatList, Text, View } from 'react-native';
 
 import { supabase } from '~/utils/supabase';
 
@@ -22,5 +22,12 @@ export default function EventAttendance() {
     // @ts-ignore
     setAttendees(data);
   };
-  return <Text>Hello</Text>;
+  return <>
+    <FlatList data={attendees} renderItem={({ item }) => (
+      <View>
+        <Text>{item.user_id}</Text>
+      </View>
+    )}
+              />
+  </>;
 }
