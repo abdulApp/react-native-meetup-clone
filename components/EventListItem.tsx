@@ -26,7 +26,7 @@ export default function EventListItem({ event }) {
     <>
       <Link
         //@ts-ignore
-        href={`/${event.id}`}
+        href={`event/${event.id}`}
         asChild>
         <Pressable className="m-3 gap-3 border-b-2 border-gray-100 pb-3">
           <View className="flex-row">
