@@ -7,7 +7,7 @@ import { supabase } from '~/utils/supabase';
 export default function EventAttendance() {
   const { id } = useLocalSearchParams();
 
-  const [attendees, setAttendees] = useState(0);
+  const [attendees, setAttendees] = useState([]);
 
   useEffect(() => {
     fetchAttendees();
@@ -16,7 +16,7 @@ export default function EventAttendance() {
   const fetchAttendees = async () => {
     const { data } = await supabase
       .from('attendance')
-      .select('*', { count: 'exact', head: true })
+      .select('*')
       .eq('event_id', id);
 
     // @ts-ignore
