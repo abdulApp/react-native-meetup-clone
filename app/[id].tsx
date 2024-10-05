@@ -91,9 +91,11 @@ export default function EventPage() {
       <View className="absolute bottom-0 left-0 right-0 flex-row items-center justify-between border-t-2 border-gray-400 p-5 pb-10">
         <Text className="text-xl font-semibold">Free</Text>
 
+        {attendace ? <Text>You are attending</Text> :
         <Pressable onPress={() => joinEvent()} className="rounded-md bg-red-400 p-5 px-8">
           <Text className="text-lg font-bold text-white">Join and RSVP</Text>
         </Pressable>
+        }
       </View>
     </View>
   );
