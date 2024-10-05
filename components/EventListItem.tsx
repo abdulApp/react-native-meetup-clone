@@ -1,8 +1,9 @@
 import Feather from '@expo/vector-icons/Feather';
 import dayjs from 'dayjs';
 import { Link } from 'expo-router';
-import { View, Text, Image, Pressable } from 'react-native';
 import { useEffect, useState } from 'react';
+import { View, Text, Image, Pressable } from 'react-native';
+
 import { supabase } from '~/utils/supabase';
 
 // @ts-ignore
@@ -21,7 +22,7 @@ export default function EventListItem({ event }) {
 
     // @ts-ignore
     setNumberOfAttendees(count);
-  }
+  };
   return (
     <>
       <Link
