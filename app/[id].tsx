@@ -42,7 +42,7 @@ export default function EventPage() {
       .select()
       .single();
 
-    setAttendace(data)
+    setAttendace(data);
   };
 
   if (loading) {
