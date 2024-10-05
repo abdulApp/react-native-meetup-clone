@@ -87,6 +87,10 @@ export default function EventPage() {
         }
       </Text>
 
+      <Text>
+        View attendance
+      </Text>
+
       {/*  Footer */}
       <View className="absolute bottom-0 left-0 right-0 flex-row items-center justify-between border-t-2 border-gray-400 p-5 pb-10">
         <Text className="text-xl font-semibold">Free</Text>
