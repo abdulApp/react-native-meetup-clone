@@ -23,7 +23,7 @@ export default function EventPage() {
   };
 
   const joinEvent = async () => {
-
+    await supabase.from('attendance').insert({ user_id: '', event_id: '' });
   }
 
   if (loading) {
