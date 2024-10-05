@@ -10,6 +10,7 @@ export default function EventPage() {
   const { id } = useLocalSearchParams();
 
   const [event, setEvent] = useState(null);
+  const [attendace, setAttendace] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const { user } = useAuth();
@@ -22,6 +23,15 @@ export default function EventPage() {
     setLoading(true);
     const { data, error } = await supabase.from('events').select('*').eq('id', id).single();
     setEvent(data);
+
+    const { data: attendanceData } = await supabase
+      .from('attendance')
+      .select('*')
+      .eq('user_id', user.id)
+      .eq('event_id', id)
+      .single();
+
+    setAttendace(attendanceData)
     setLoading(false);
   };
 
