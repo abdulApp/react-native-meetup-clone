@@ -1,6 +1,7 @@
+import { useLocalSearchParams } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import { Text } from 'react-native';
-import { useLocalSearchParams } from 'expo-router';
+
 import { supabase } from '~/utils/supabase';
 
 export default function EventAttendance() {
@@ -20,8 +21,6 @@ export default function EventAttendance() {
 
     // @ts-ignore
     setAttendees(count);
-  }
-  return (
-    <Text>Hello</Text>
-  )
+  };
+  return <Text>Hello</Text>;
 }
