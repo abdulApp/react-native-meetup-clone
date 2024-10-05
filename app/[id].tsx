@@ -3,8 +3,8 @@ import { useLocalSearchParams, Stack } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, Image, Pressable, Text, View } from 'react-native';
 
-import { supabase } from '~/utils/supabase';
 import { useAuth } from '~/contexts/AuthProvider';
+import { supabase } from '~/utils/supabase';
 
 export default function EventPage() {
   const { id } = useLocalSearchParams();
@@ -20,11 +20,7 @@ export default function EventPage() {
 
   const fetchEvent = async () => {
     setLoading(true);
-    const { data, error } = await supabase
-      .from('events')
-      .select('*')
-      .eq('id', id)
-      .single();
+    const { data, error } = await supabase.from('events').select('*').eq('id', id).single();
     setEvent(data);
     setLoading(false);
   };
@@ -35,7 +31,7 @@ export default function EventPage() {
       .insert({ user_id: user.id, event_id: event.id })
       .select()
       .single();
-  }
+  };
 
   if (loading) {
     return <ActivityIndicator />;
