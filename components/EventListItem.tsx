@@ -7,6 +7,10 @@ import { useState } from 'react';
 // @ts-ignore
 export default function EventListItem({ event }) {
   const [numberOfAttendees, setNumberOfAttendees] = useState(0);
+
+  const fetchNumberOfAttendees = async () => {
+
+  }
   return (
     <>
       <Link
@@ -17,8 +21,7 @@ export default function EventListItem({ event }) {
           <View className="flex-row">
             <View className="flex-1 gap-2">
               <Text className="text-lg font-semibold uppercase text-amber-800">
-                {dayjs(event.date).format('ddd, D MMM')} ·{' '}
-                {dayjs(event.date).format('h:mm A')}
+                {dayjs(event.date).format('ddd, D MMM')} · {dayjs(event.date).format('h:mm A')}
               </Text>
               <Text className="text-xl font-bold">{event.title}</Text>
               <Text className="text-gray-700">{event.location}</Text>
@@ -30,7 +33,7 @@ export default function EventListItem({ event }) {
 
           {/* Footer */}
           <View className="flex-row gap-3">
-            <Text className="mr-auto text-gray-700">16 going</Text>
+            <Text className="mr-auto text-gray-700">{numberOfAttendees} going</Text>
             <Feather name="share" size={20} color="gray" />
             <Feather name="bookmark" size={24} color="gray" />
           </View>
