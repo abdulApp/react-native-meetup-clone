@@ -26,7 +26,7 @@ export default function EventPage() {
   };
 
   const joinEvent = async () => {
-    await supabase
+    const { data, error } = await supabase
       .from('attendance')
       .insert({ user_id: user.id, event_id: event.id })
       .select()
