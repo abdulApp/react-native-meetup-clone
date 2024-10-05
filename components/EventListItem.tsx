@@ -13,7 +13,12 @@ export default function EventListItem({ event }) {
   }, [event.id]);
 
   const fetchNumberOfAttendees = async () => {
+    const { count } = await supabase
+      .from('attendance')
+      .select('*', { count: 'exact', head: true })
+      .eq('event_id', event.id);
 
+    setNumberOfAttendees(count);
   }
   return (
     <>
