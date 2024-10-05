@@ -20,7 +20,11 @@ export default function EventPage() {
 
   const fetchEvent = async () => {
     setLoading(true);
-    const { data, error } = await supabase.from('events').select('*').eq('id', id).single();
+    const { data, error } = await supabase
+      .from('events')
+      .select('*')
+      .eq('id', id)
+      .single();
     setEvent(data);
     setLoading(false);
   };
