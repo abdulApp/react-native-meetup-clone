@@ -14,13 +14,13 @@ export default function EventAttendance() {
   }, [id]);
 
   const fetchAttendees = async () => {
-    const { count } = await supabase
+    const { data } = await supabase
       .from('attendance')
       .select('*', { count: 'exact', head: true })
       .eq('event_id', id);
 
     // @ts-ignore
-    setAttendees(count);
+    setAttendees(data);
   };
   return <Text>Hello</Text>;
 }
