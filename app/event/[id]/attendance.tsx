@@ -16,7 +16,7 @@ export default function EventAttendance() {
   const fetchAttendees = async () => {
     const { data } = await supabase
       .from('attendance')
-      .select('*')
+      .select('*, profiles(*)')
       .eq('event_id', id);
 
     // @ts-ignore
@@ -28,7 +28,7 @@ export default function EventAttendance() {
         data={attendees}
         renderItem={({ item }) => (
           <View>
-            <Text>{item.user_id}</Text>
+            <Text>{item.profiles.full_name}</Text>
           </View>
         )}
       />
