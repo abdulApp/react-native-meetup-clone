@@ -29,7 +29,6 @@ export default function EventPage() {
     const { data, error } = await supabase
       .from('attendance')
       .insert({ user_id: user.id, event_id: event.id })
-      .select()
       .single();
 
     console.warn(data);
