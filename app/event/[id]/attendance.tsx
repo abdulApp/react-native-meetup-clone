@@ -9,10 +9,10 @@ export default function EventAttendance() {
   const [attendees, setAttendees] = useState(0);
 
   useEffect(() => {
-    fetchNumberOfAttendees();
+    fetchAttendees();
   }, [id]);
 
-  const fetchNumberOfAttendees = async () => {
+  const fetchAttendees = async () => {
     const { count } = await supabase
       .from('attendance')
       .select('*', { count: 'exact', head: true })
