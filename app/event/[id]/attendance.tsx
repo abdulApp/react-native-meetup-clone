@@ -22,12 +22,16 @@ export default function EventAttendance() {
     // @ts-ignore
     setAttendees(data);
   };
-  return <>
-    <FlatList data={attendees} renderItem={({ item }) => (
-      <View>
-        <Text>{item.user_id}</Text>
-      </View>
-    )}
-              />
-  </>;
+  return (
+    <>
+      <FlatList
+        data={attendees}
+        renderItem={({ item }) => (
+          <View>
+            <Text>{item.user_id}</Text>
+          </View>
+        )}
+      />
+    </>
+  );
 }
