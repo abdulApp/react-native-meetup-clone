@@ -9,7 +9,7 @@ export default function CreateEvent() {
         placeholder="Description"
         multiline
         numberOfLines={3}
-        className="min-h-12 rounded-md bg-gray-200 p-3 px-8"
+        className="min-h-32 rounded-md bg-gray-200 p-3 px-8"
       />
     </View>
   );
