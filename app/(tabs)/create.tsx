@@ -6,6 +6,7 @@ export default function CreateEvent() {
       <Text>Create Event</Text>
       {/* Event Title*/}
       <TextInput placeholder="Title" className="rounded-md bg-gray-200 p-3 px-8" />
+      {/* Event Description */}
       <TextInput
         placeholder="Description"
         multiline
