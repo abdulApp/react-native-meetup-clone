@@ -28,7 +28,7 @@ export default function EventAttendance() {
         data={attendees}
         renderItem={({ item }) => (
           <View className='p-3'>
-            <Text className='font-bold'>{item.profiles.full_name || 'User'}</Text>
+            <Text className='font-bold text-xl'>{item.profiles.full_name || 'User'}</Text>
           </View>
         )}
       />
