@@ -1,8 +1,10 @@
 import { Text, TextInput, View } from 'react-native';
 import DatePicker from 'react-native-date-picker';
+import { useState } from 'react';
 
 export default function CreateEvent() {
 
+  const [date, setDate] = useState(new Date());
   return (
     <View className="flex-1 gap-3 bg-white p-5">
       <Text>Create Event</Text>
@@ -16,7 +18,7 @@ export default function CreateEvent() {
         className="min-h-32 rounded-md bg-gray-200 p-3 px-8"
       />
 
-      <DatePicker date={} />
+      <DatePicker date={date} />
     </View>
   );
 }
