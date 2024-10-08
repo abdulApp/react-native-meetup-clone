@@ -5,6 +5,7 @@ import { useState } from 'react';
 export default function CreateEvent() {
 
   const [date, setDate] = useState(new Date());
+  const [open, setOpen] = useState(false);
   return (
     <View className="flex-1 gap-3 bg-white p-5">
       <Text>Create Event</Text>
@@ -18,7 +19,15 @@ export default function CreateEvent() {
         className="min-h-32 rounded-md bg-gray-200 p-3 px-8"
       />
 
-      <DatePicker date={date} />
+      <DatePicker
+        date={date}
+        open={open}
+        onConfirm={() => {
+          setOpen(false);
+          setDate(date);
+        }}
+        onCancel={() => setOpen(false)}
+      />
     </View>
   );
 }
