@@ -26,9 +26,6 @@ export default function CreateEvent() {
       />
       <Text>Selcet The Date</Text>
       <View className="flex flex-row justify-between">
-        {/*<Button title="Select Date" onPress={() => showMode('date')} />*/}
-        {/*<Button title="Select Time" onPress={() => showMode('time')} />*/}
-        {/*{open && <DateTimePicker value={date} mode={'date'} onChange={onChangeDate} />}*/}
         <DateTimePicker value={date} mode={'date'} onChange={onChangeDate} />
         <DateTimePicker value={date} mode={'time'} onChange={onChangeDate} />
         {/*<Text>{date.toLocaleString()}</Text>*/}
