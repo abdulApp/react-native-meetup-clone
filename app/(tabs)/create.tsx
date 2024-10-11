@@ -22,7 +22,12 @@ export default function CreateEvent() {
     <View className="flex-1 gap-3 bg-white p-5">
       <Text>Create Event</Text>
       {/* Event Title */}
-      <TextInput value={title} onChangeText={(text) => setTitle(text)} placeholder="Title" className="rounded-md bg-gray-200 p-3 px-8" />
+      <TextInput
+        value={title}
+        onChangeText={(text) => setTitle(text)}
+        placeholder="Title"
+        className="rounded-md bg-gray-200 p-3 px-8"
+      />
       {/* Event Description */}
       <TextInput
         placeholder="Description"
