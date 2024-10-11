@@ -4,6 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { Button, Pressable, Text, TextInput, View } from 'react-native';
 import { set } from 'yaml/dist/schema/yaml-1.1/set';
+import { supabase } from '~/utils/supabase';
 
 export default function CreateEvent() {
   const [date, setDate] = useState(new Date());
@@ -17,7 +18,9 @@ export default function CreateEvent() {
     setDate(selectedDate);
   };
 
-  const createEvent = async () => {};
+  const createEvent = async () => {
+    const { data, error } = await supabase.from('events').insert([{ title, description, date}])
+  };
 
   return (
     <View className="flex-1 gap-3 bg-white p-5">
