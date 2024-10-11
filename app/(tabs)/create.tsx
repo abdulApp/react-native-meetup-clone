@@ -19,15 +19,7 @@ export default function CreateEvent() {
         className="min-h-32 rounded-md bg-gray-200 p-3 px-8"
       />
 
-      <DatePicker
-        date={date}
-        open={open}
-        onConfirm={() => {
-          setOpen(false);
-          setDate(date);
-        }}
-        onCancel={() => setOpen(false)}
-      />
+
     </View>
   );
 }
