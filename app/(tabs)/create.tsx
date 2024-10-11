@@ -26,8 +26,8 @@ export default function CreateEvent() {
       />
       <Text>Select The Date</Text>
       <View className="flex flex-row justify-between">
-        <DateTimePicker value={date} mode={'date'} onChange={onChangeDate} />
-        <DateTimePicker value={date} mode={'time'} onChange={onChangeDate} />
+        <DateTimePicker value={date} mode="date" onChange={onChangeDate} />
+        <DateTimePicker value={date} mode="time" onChange={onChangeDate} />
         <StatusBar />
       </View>
     </View>
