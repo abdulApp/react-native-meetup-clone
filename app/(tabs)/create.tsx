@@ -31,6 +31,7 @@ export default function CreateEvent() {
           value={date}
           mode="date"
           minimumDate={new Date()}
+          // @ts-ignore
           onChange={onChangeDate}
         />
         <DateTimePicker
