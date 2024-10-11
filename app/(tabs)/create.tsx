@@ -1,8 +1,8 @@
 // import DatePicker from 'react-native-date-picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
-import { Button, Text, TextInput, View } from 'react-native';
+import React, { useState } from 'react';
+import { Button, Pressable, Text, TextInput, View } from 'react-native';
 
 export default function CreateEvent() {
   const [date, setDate] = useState(new Date());
@@ -47,8 +47,14 @@ export default function CreateEvent() {
             onChange={onChangeDate}
           />
         </View>
-        <StatusBar />
+        {/*<StatusBar />*/}
       </View>
+      <Pressable
+        // onPress={() => signUpWithEmail()}
+        // disabled={loading}
+        className="flex-1 items-center rounded-md bg-red-500 p-3 px-8">
+        <Text className="text-lg font-bold text-white">Sign up</Text>
+      </Pressable>
     </View>
   );
 }
