@@ -7,8 +7,9 @@ import { set } from 'yaml/dist/schema/yaml-1.1/set';
 
 export default function CreateEvent() {
   const [date, setDate] = useState(new Date());
-
   const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+
   const [loading, setLoading] = useState(false);
   // const [open, setOpen] = useState(false);
 
