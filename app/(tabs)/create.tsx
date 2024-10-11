@@ -40,7 +40,6 @@ export default function CreateEvent() {
         <View>
           <Text className="p-3 px-8">Date</Text>
 
-        </View>
         <DateTimePicker
           className="min-h-32 rounded-md bg-gray-200 p-3 px-8"
           value={date}
@@ -48,6 +47,7 @@ export default function CreateEvent() {
           // @ts-ignore
           onChange={onChangeDate}
         />
+        </View>
         <StatusBar />
       </View>
     </View>
