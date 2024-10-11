@@ -28,7 +28,6 @@ export default function CreateEvent() {
       <View className="flex flex-row justify-between">
         <DateTimePicker value={date} mode={'date'} onChange={onChangeDate} />
         <DateTimePicker value={date} mode={'time'} onChange={onChangeDate} />
-        {/*<Text>{date.toLocaleString()}</Text>*/}
         <StatusBar />
       </View>
     </View>
