@@ -37,6 +37,8 @@ export default function CreateEvent() {
         },
       ])
       .select();
+
+    setTitle('');
     setLoading(false);
   };
 
