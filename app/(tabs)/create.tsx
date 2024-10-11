@@ -13,7 +13,7 @@ export default function CreateEvent() {
     setDate(selectedDate);
   };
 
-  const creataEvent = async () => {};
+  const createEvent = async () => {};
 
   return (
     <View className="flex-1 gap-3 bg-white p-5">
