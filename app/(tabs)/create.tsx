@@ -29,6 +29,7 @@ export default function CreateEvent() {
       .select();
 
     console.warn(data);
+    console.warn(error)
   };
 
   return (
