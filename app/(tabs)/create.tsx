@@ -39,8 +39,8 @@ export default function CreateEvent() {
       ])
       .select();
 
-    if(error) {
-      Alert.alert("Failed to create the event", error.message)
+    if (error) {
+      Alert.alert('Failed to create the event', error.message);
     }
 
     setTitle('');
