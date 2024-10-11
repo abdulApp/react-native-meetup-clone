@@ -40,6 +40,7 @@ export default function CreateEvent() {
 
     setTitle('');
     setDescription('');
+    setDate(new Date())
     setLoading(false);
   };
 
