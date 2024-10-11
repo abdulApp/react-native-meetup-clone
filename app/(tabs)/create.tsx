@@ -5,8 +5,12 @@ import React, { useState } from 'react';
 import { Button, Pressable, Text, TextInput, View } from 'react-native';
 import { set } from 'yaml/dist/schema/yaml-1.1/set';
 import { supabase } from '~/utils/supabase';
+import { useAuth } from '~/contexts/AuthProvider';
 
 export default function CreateEvent() {
+
+  const { user } = useAuth();
+
   const [date, setDate] = useState(new Date());
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
