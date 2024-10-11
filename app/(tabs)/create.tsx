@@ -3,6 +3,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { Button, Pressable, Text, TextInput, View } from 'react-native';
+import { set } from 'yaml/dist/schema/yaml-1.1/set';
 
 export default function CreateEvent() {
   const [date, setDate] = useState(new Date());
@@ -21,7 +22,7 @@ export default function CreateEvent() {
     <View className="flex-1 gap-3 bg-white p-5">
       <Text>Create Event</Text>
       {/* Event Title */}
-      <TextInput value={title} placeholder="Title" className="rounded-md bg-gray-200 p-3 px-8" />
+      <TextInput value={title} onChangeText={setTitle} placeholder="Title" className="rounded-md bg-gray-200 p-3 px-8" />
       {/* Event Description */}
       <TextInput
         placeholder="Description"
