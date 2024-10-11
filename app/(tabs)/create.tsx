@@ -26,14 +26,17 @@ export default function CreateEvent() {
       />
       <Text>Select The Date</Text>
       <View className="flex flex-row justify-between">
-        <DateTimePicker
-          className="min-h-32 rounded-md bg-gray-200 p-3 px-8"
-          value={date}
-          mode="date"
-          minimumDate={new Date()}
-          // @ts-ignore
-          onChange={onChangeDate}
-        />
+        <View>
+          <Text>Date</Text>
+          <DateTimePicker
+            className="min-h-32 rounded-md bg-gray-200 p-3 px-8"
+            value={date}
+            mode="date"
+            minimumDate={new Date()}
+            // @ts-ignore
+            onChange={onChangeDate}
+          />
+        </View>
         <DateTimePicker
           className="min-h-32 rounded-md bg-gray-200 p-3 px-8"
           value={date}
