@@ -4,11 +4,11 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { Button, Pressable, Text, TextInput, View } from 'react-native';
 import { set } from 'yaml/dist/schema/yaml-1.1/set';
-import { supabase } from '~/utils/supabase';
+
 import { useAuth } from '~/contexts/AuthProvider';
+import { supabase } from '~/utils/supabase';
 
 export default function CreateEvent() {
-
   const { user } = useAuth();
 
   const [date, setDate] = useState(new Date());
@@ -23,7 +23,10 @@ export default function CreateEvent() {
   };
 
   const createEvent = async () => {
-    const { data, error } = await supabase.from('events').insert([{ title, description, date, user_id: user.id}]).select()
+    const { data, error } = await supabase
+      .from('events')
+      .insert([{ title, description, date, user_id: user.id }])
+      .select();
   };
 
   return (
