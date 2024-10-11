@@ -35,7 +35,11 @@ export default function CreateEvent() {
         <Button title="Select Date" onPress={() => showMode('date')} />
         {
           open && (
-            <DateTimePicker value={date} mode={mode} onChange={onChangeDate} />
+            <DateTimePicker
+              value={date}
+              mode={mode}
+              onChange={onChangeDate}
+            />
           )
         }
         <StatusBar />
