@@ -6,17 +6,10 @@ import { Button, Text, TextInput, View } from 'react-native';
 
 export default function CreateEvent() {
   const [date, setDate] = useState(new Date());
-  const [open, setOpen] = useState(false);
-  const [mode, setMode] = useState('date');
+  // const [open, setOpen] = useState(false);
 
   const onChangeDate = (e: any, selectedDate: Date) => {
     setDate(selectedDate);
-    setOpen(false);
-  };
-
-  const showMode = (modeToShow: string) => {
-    setOpen(true);
-    setMode(modeToShow);
   };
 
   return (
@@ -31,9 +24,14 @@ export default function CreateEvent() {
         numberOfLines={3}
         className="min-h-32 rounded-md bg-gray-200 p-3 px-8"
       />
-      <View>
-        <Button title="Select Date" onPress={() => showMode('date')} />
-        {open && <DateTimePicker value={date} mode={mode} onChange={onChangeDate} />}
+      <Text>Selcet The Date</Text>
+      <View className="flex flex-row justify-between">
+        {/*<Button title="Select Date" onPress={() => showMode('date')} />*/}
+        {/*<Button title="Select Time" onPress={() => showMode('time')} />*/}
+        {/*{open && <DateTimePicker value={date} mode={'date'} onChange={onChangeDate} />}*/}
+        <DateTimePicker value={date} mode={'date'} onChange={onChangeDate} />
+        <DateTimePicker value={date} mode={'time'} onChange={onChangeDate} />
+        {/*<Text>{date.toLocaleString()}</Text>*/}
         <StatusBar />
       </View>
     </View>
