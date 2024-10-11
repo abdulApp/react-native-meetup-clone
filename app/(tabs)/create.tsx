@@ -7,14 +7,16 @@ import { Button, Text, TextInput, View } from 'react-native';
 export default function CreateEvent() {
   const [date, setDate] = useState(new Date());
   const [open, setOpen] = useState(false);
+  const [mode, setMode] = useState('date');
 
   const onChangeDate = (e: any, selectedDate: Date) => {
     setDate(selectedDate);
     setOpen(false);
   };
 
-  const showMode = (modeToShow) => {
+  const showMode = (modeToShow: string) => {
     setOpen(true);
+    setMode(modeToShow)
   };
   return (
     <View className="flex-1 gap-3 bg-white p-5">
