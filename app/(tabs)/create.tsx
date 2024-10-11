@@ -39,6 +39,7 @@ export default function CreateEvent() {
       .select();
 
     setTitle('');
+    setDescription('');
     setLoading(false);
   };
 
