@@ -23,6 +23,7 @@ export default function CreateEvent() {
   };
 
   const createEvent = async () => {
+    setLoading(true)
     const { data, error } = await supabase
       .from('events')
       .insert([
