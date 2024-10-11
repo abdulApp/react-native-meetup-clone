@@ -7,7 +7,7 @@ import { Button, Pressable, Text, TextInput, View } from 'react-native';
 export default function CreateEvent() {
   const [date, setDate] = useState(new Date());
 
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState('');
   const [loading, setLoading] = useState(false);
   // const [open, setOpen] = useState(false);
 
