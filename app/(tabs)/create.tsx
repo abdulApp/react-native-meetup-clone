@@ -41,13 +41,15 @@ export default function CreateEvent() {
 
     if (error) {
       Alert.alert('Failed to create the event', error.message);
+    } else {
+      setTitle('');
+      setDescription('');
+      setDate(new Date());
+
+      router.push(`/event/${data.id}`);
     }
 
-    setTitle('');
-    setDescription('');
-    setDate(new Date());
     setLoading(false);
-    router.push(`/event/${data.id}`);
   };
 
   return (
