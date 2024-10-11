@@ -27,6 +27,8 @@ export default function CreateEvent() {
       .from('events')
       .insert([{ title, description, date, user_id: user.id }])
       .select();
+
+    console.warn(data);
   };
 
   return (
