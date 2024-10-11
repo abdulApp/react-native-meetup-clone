@@ -3,7 +3,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import { router } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { Button, Pressable, Text, TextInput, View } from 'react-native';
+import { Alert, Button, Pressable, Text, TextInput, View } from 'react-native';
 import { set } from 'yaml/dist/schema/yaml-1.1/set';
 
 import { useAuth } from '~/contexts/AuthProvider';
@@ -38,6 +38,10 @@ export default function CreateEvent() {
         },
       ])
       .select();
+
+    if(error) {
+      Alert.alert("Failed to create the event", error.message)
+    }
 
     setTitle('');
     setDescription('');
