@@ -36,9 +36,6 @@ export default function CreateEvent() {
         },
       ])
       .select();
-
-    console.warn("data", data);
-    console.warn("error", error);
   };
 
   return (
