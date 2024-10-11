@@ -25,7 +25,7 @@ export default function CreateEvent() {
       {/* Event Title */}
       <TextInput
         value={title}
-        onChangeText={(text) => setTitle(text)}
+        onChangeText={setTitle}
         placeholder="Title"
         className="rounded-md bg-gray-200 p-3 px-8"
       />
