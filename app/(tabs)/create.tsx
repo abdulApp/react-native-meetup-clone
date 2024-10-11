@@ -37,7 +37,10 @@ export default function CreateEvent() {
             onChange={onChangeDate}
           />
         </View>
-        <View></View>
+        <View>
+          <Text className="p-3 px-8">Date</Text>
+
+        </View>
         <DateTimePicker
           className="min-h-32 rounded-md bg-gray-200 p-3 px-8"
           value={date}
