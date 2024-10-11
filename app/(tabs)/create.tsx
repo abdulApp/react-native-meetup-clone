@@ -33,15 +33,7 @@ export default function CreateEvent() {
       />
       <View>
         <Button title="Select Date" onPress={() => showMode('date')} />
-        {
-          open && (
-            <DateTimePicker
-              value={date}
-              mode={mode}
-              onChange={onChangeDate}
-            />
-          )
-        }
+        {open && <DateTimePicker value={date} mode={mode} onChange={onChangeDate} />}
         <StatusBar />
       </View>
     </View>
