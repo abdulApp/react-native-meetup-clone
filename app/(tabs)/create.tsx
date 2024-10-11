@@ -28,8 +28,8 @@ export default function CreateEvent() {
       .insert([{ title, description, date, user_id: user.id }])
       .select();
 
-    console.warn(data);
-    console.warn(error);
+    console.warn("data", data);
+    console.warn("error", error);
   };
 
   return (
