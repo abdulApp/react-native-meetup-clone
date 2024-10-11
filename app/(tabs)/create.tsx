@@ -1,5 +1,6 @@
 // import DatePicker from 'react-native-date-picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import { router } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { Button, Pressable, Text, TextInput, View } from 'react-native';
@@ -7,7 +8,6 @@ import { set } from 'yaml/dist/schema/yaml-1.1/set';
 
 import { useAuth } from '~/contexts/AuthProvider';
 import { supabase } from '~/utils/supabase';
-import { router } from 'expo-router';
 
 export default function CreateEvent() {
   const { user } = useAuth();
@@ -43,7 +43,7 @@ export default function CreateEvent() {
     setDescription('');
     setDate(new Date());
     setLoading(false);
-    router.push(`/event/${data.id}`)
+    router.push(`/event/${data.id}`);
   };
 
   return (
