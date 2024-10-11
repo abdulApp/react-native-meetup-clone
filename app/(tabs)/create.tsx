@@ -55,8 +55,8 @@ export default function CreateEvent() {
       <Pressable
         onPress={() => createEvent()}
         disabled={loading}
-        className="mt-auto items-center rounded-md bg-blue-500 p-3 px-8">
-        <Text className="text-lg font-bold text-black">Create Event</Text>
+        className="mt-auto items-center rounded-md bg-red-500 p-3 px-8">
+        <Text className="text-lg font-bold text-white">Create Event</Text>
       </Pressable>
     </View>
   );
