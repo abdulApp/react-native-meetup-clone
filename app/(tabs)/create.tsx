@@ -37,7 +37,8 @@ export default function CreateEvent() {
           user_id: user.id,
         },
       ])
-      .select();
+      .select()
+      .single();
 
     if (error) {
       Alert.alert('Failed to create the event', error.message);
