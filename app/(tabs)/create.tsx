@@ -13,6 +13,10 @@ export default function CreateEvent() {
     setDate(selectedDate);
   };
 
+  const creataEvent = async () => {
+
+  }
+
   return (
     <View className="flex-1 gap-3 bg-white p-5">
       <Text>Create Event</Text>
