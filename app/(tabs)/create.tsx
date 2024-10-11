@@ -23,7 +23,7 @@ export default function CreateEvent() {
   };
 
   const createEvent = async () => {
-    const { data, error } = await supabase.from('events').insert([{ title, description, date, user_id: user.id}])
+    const { data, error } = await supabase.from('events').insert([{ title, description, date, user_id: user.id}]).select()
   };
 
   return (
