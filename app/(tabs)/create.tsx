@@ -7,8 +7,9 @@ export default function CreateEvent() {
   const [date, setDate] = useState(new Date());
   const [open, setOpen] = useState(false);
 
-  const onChangeDate = (e, selectedDate: Date) => {
+  const onChangeDate = (e: any, selectedDate: Date) => {
     setDate(selectedDate);
+    setOpen(false);
   };
   return (
     <View className="flex-1 gap-3 bg-white p-5">
