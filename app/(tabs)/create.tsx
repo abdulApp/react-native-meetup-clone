@@ -25,7 +25,7 @@ export default function CreateEvent() {
   const createEvent = async () => {
     const { data, error } = await supabase
       .from('events')
-      .insert([{ title, description, date, user_id: user.id }])
+      .insert([{ title, description, date, image_url: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg", location: "Tech Hub, Barcelona", user_id: user.id }])
       .select();
 
     console.warn("data", data);
