@@ -38,6 +38,7 @@ export default function CreateEvent() {
           className="min-h-32 rounded-md bg-gray-200 p-3 px-8"
           value={date}
           mode="time"
+          // @ts-ignore
           onChange={onChangeDate}
         />
         <StatusBar />
