@@ -18,6 +18,7 @@ export default function CreateEvent() {
     setOpen(true);
     setMode(modeToShow);
   };
+
   return (
     <View className="flex-1 gap-3 bg-white p-5">
       <Text>Create Event</Text>
@@ -31,7 +32,7 @@ export default function CreateEvent() {
         className="min-h-32 rounded-md bg-gray-200 p-3 px-8"
       />
       <View>
-        <Button title="Select Date" />
+        <Button title="Select Date" onPress={() => showMode("date")} />
         <StatusBar />
       </View>
     </View>
