@@ -31,6 +31,8 @@ export default function CreateEvent() {
       />
       {/* Event Description */}
       <TextInput
+        value={description}
+        onChangeText={(text) => setDescription(text)}
         placeholder="Description"
         multiline
         numberOfLines={3}
