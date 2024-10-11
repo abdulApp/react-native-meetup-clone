@@ -6,6 +6,7 @@ import { Button, Pressable, Text, TextInput, View } from 'react-native';
 
 export default function CreateEvent() {
   const [date, setDate] = useState(new Date());
+  const [loading, setLoading] = useState(false);
   // const [open, setOpen] = useState(false);
 
   const onChangeDate = (e: any, selectedDate: Date) => {
@@ -51,7 +52,7 @@ export default function CreateEvent() {
       </View>
       <Pressable
         // onPress={() => signUpWithEmail()}
-        // disabled={loading}
+        disabled={loading}
         className="flex-1 items-center rounded-md bg-red-500 p-3 px-8">
         <Text className="text-lg font-bold text-white">Sign up</Text>
       </Pressable>
