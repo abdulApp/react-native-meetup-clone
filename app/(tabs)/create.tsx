@@ -16,7 +16,7 @@ export default function CreateEvent() {
 
   const showMode = (modeToShow: string) => {
     setOpen(true);
-    setMode(modeToShow)
+    setMode(modeToShow);
   };
   return (
     <View className="flex-1 gap-3 bg-white p-5">
